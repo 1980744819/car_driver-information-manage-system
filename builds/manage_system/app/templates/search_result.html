@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block page_header_content %}
+    <div class="page-header container">
+        <h2 class="text-primary">Hello,all you want to search is here
+        </h2>
+    </div>
+{% endblock %}
+{% block page_middle_content %}
+    <div class="container text-info">
+        <table class="table">
+            <thead>
+            <tr>
+
+                {% for k in query_result.keys() %}
+                    <th>
+                        {{ k|upper }}
+                    </th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% for v in query_result.values() %}
+                    <th>
+                        {{ v }}
+                    </th>
+                {% endfor %}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Log In{% endblock %}
+{% block page_content %}
+
+{#        <form method="POST">#}
+{#            {{ form.hidden_tag() }}<br>#}
+{#            {{ form.name.lable }}<br>{{ form.name(id='name_field') }}<br>#}
+{#            {{ form.password.label }}<br>{{ form.name(id='password_field') }}<br>#}
+{#            {{ form.remember_me(id='remember_me') }}<br><label>Remember Me</label><br>#}
+{#            {{ form.submit }}#}
+{#        </form>#}
+    {{ wtf.quick_form(form) }}
+{% endblock %}

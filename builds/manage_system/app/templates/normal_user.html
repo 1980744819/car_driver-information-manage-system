@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block page_middle_content %}
+
+    <div class="container text-info">
+        <table class="table">
+            <caption class="text-center text-primary"><h3>用户基本信息</h3></caption>
+            <thead>
+            <tr>
+
+                {% for k in query_result.keys() %}
+                    <th>
+                        {{ k|upper }}
+                    </th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {% for v in query_result.values() %}
+                    <th>
+                        {{ v }}
+                    </th>
+                {% endfor %}
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container alert-info">
+        {#        <div class="">#}
+        {{ wtf.quick_form(form) }}
+        {#        </div>#}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block page_middle_content %}
+    {% if extra_message %}
+        <div class="container text-info">
+            <h4>{{ extra_message }}</h4>
+        </div>
+    {% endif %}
+    <div class="container">
+        {{ wtf.quick_form(form) }}
+    </div>
+{% endblock %}

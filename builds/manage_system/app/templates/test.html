@@ -1,0 +1,185 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Flask{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">菜鸟教程</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">iOS</a></li>
+                    <li><a href="#">SVN</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Java
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jmeter</a></li>
+                            <li><a href="#">EJB</a></li>
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">菜鸟教程</a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">iOS</a></li>
+                    <li><a href="#">SVN</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Java <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jmeter</a></li>
+                            <li><a href="#">EJB</a></li>
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">菜鸟教程</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Manage System</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href=""><span class="glyphicon glyphicon-home"></span> </a></li>
+                <li class="dropdown">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign In</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                        <li><a href=""><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
+{% extends "base.html" %}
+{% block body %}
+    {#    司机#}
+    <div class="container">
+        <div class="text-center text-info">
+            <h3 align><strong>司机管理</strong></h3>
+        </div>
+        <nav class="nav navbar-default" role="navigation">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-primary"
+                        onclick="document.getElementById('main').src={{ url_for('driver_info_upload') }}">上传信息
+                </button>
+                <button type="button" class="btn btn-primary">修改信息</button>
+                <button type="button" class="btn btn-primary">查询信息</button>
+                <button type="button" class="btn btn-primary">删除信息</button>
+            </div>
+        </nav>
+    </div>
+    <hr>
+    {#    车辆#}
+    <div class="container">
+        <div class="text-center text-info">
+            <h3 align><strong>车辆信息管理</strong></h3>
+        </div>
+        <nav class="nav navbar-default" role="navigation">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-primary">上传信息</button>
+                <button type="button" class="btn btn-primary">修改信息</button>
+                <button type="button" class="btn btn-primary">查询信息</button>
+                <button type="button" class="btn btn-primary">删除信息</button>
+            </div>
+        </nav>
+    </div>
+    <hr>
+    {#    维修#}
+    <div class="container">
+        <div class="text-center text-info">
+            <h3 align><strong>维修信息管理</strong></h3>
+        </div>
+        <nav class="nav navbar-default" role="navigation">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-primary">上传信息</button>
+                <button type="button" class="btn btn-primary">修改信息</button>
+                <button type="button" class="btn btn-primary">查询信息</button>
+                <button type="button" class="btn btn-primary">删除信息</button>
+            </div>
+        </nav>
+    </div>
+    <hr>
+    {#    用户管理#}
+    <div class="container">
+        <div class="text-center text-info">
+            <h3 align><strong>用户管理</strong></h3>
+        </div>
+        <nav class="nav navbar-default" role="navigation">
+            <div class="btn-group-vertical btn-block">
+                <button type="button" class="btn btn-primary">邀请管理员</button>
+                <button type="button" class="btn btn-primary">删除管理员</button>
+                <button type="button" class="btn btn-primary">修改密码</button>
+                {#                <button type="button" class="btn btn-primary"></button>#}
+            </div>
+        </nav>
+    </div>
+    <hr>
+{% endblock %}
+{% extends "base.html" %}
+{% block title %}Admin{% endblock %}
+{% block page_header_content %}{% endblock %}
+{% block page_middle_content %}
+    {#    <frameset cols="30% 70%">#}
+    {#    <frame src="admin_menu.html">#}
+    {#    <frame src="404.html">#}
+    {#    </frameset>#}
+
+
+    <table class="table table-bordered table-hover" >
+        <tr>
+            <td width="20%" height="700px">
+                <iframe src="{{ url_for('admin_menu') }}" width="100%" height="100%" frameborder="0"></iframe>
+            </td>
+            <td width="80%" height="700px">
+                <iframe id="main" name="content" src="{{ url_for('home') }}" width="100%" height="100%" frameborder="0"></iframe>
+            </td>
+        </tr>
+    </table>
+
+{% endblock %}
