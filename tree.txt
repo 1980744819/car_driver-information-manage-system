@@ -1,0 +1,76 @@
+│  .gitattributes
+│  README.md
+│  tree.txt
+│  
+└─builds
+    └─manage_system(app文件夹)
+        │  config.py(配置)
+        │  run.py（运行）
+        │  
+        ├─.idea
+        │  │  manage_system.iml
+        │  │  misc.xml
+        │  │  modules.xml
+        │  │  workspace.xml
+        │  │  
+        │  ├─dictionaries
+        │  │      .xml
+        │  │      
+        │  └─inspectionProfiles
+        │          Project_Default.xml
+        │          
+        ├─app
+        │  │  forms.py(表单类)
+        │  │  models.py(数据库模型类)
+        │  │  views.py(视图，路由处理)
+        │  │  __init__.py(初始设置)
+        │  │  
+        │  ├─static
+        │  │  └─image
+        │  │      └─icon
+        │  │              OS_Linux_ubuntu.ico(图标)
+        │  │              
+        │  ├─templates(html 模板)
+        │  │      404.html
+        │  │      admin.html
+        │  │      admin_menu.html
+        │  │      base.html
+        │  │      driver_info_search.html
+        │  │      home.html
+        │  │      login.html
+        │  │      normal_change_password.html
+        │  │      normal_user.html
+        │  │      operations.html
+        │  │      operation_result.html
+        │  │      search_result.html
+        │  │      signin.html
+        │  │      test.html
+        │  │      
+        │  └─__pycache__
+        │          forms.cpython-36.pyc
+        │          models.cpython-36.pyc
+        │          views.cpython-36.pyc
+        │          __init__.cpython-36.pyc
+        │          
+        ├─flask
+        ├─migrations(数据库迁移仓库)
+        │  │  alembic.ini
+        │  │  env.py
+        │  │  README
+        │  │  script.py.mako
+        │  │  
+        │  ├─versions
+        │  │  │  801d9e9617a8_inital_migration.py
+        │  │  │  ae61f2765b45_second_migration.py
+        │  │  │  
+        │  │  └─__pycache__
+        │  │          801d9e9617a8_inital_migration.cpython-36.pyc
+        │  │          ae61f2765b45_second_migration.cpython-36.pyc
+        │  │          
+        │  └─__pycache__
+        │          env.cpython-36.pyc
+        │          
+        ├─tmp(缓存文件)
+        └─__pycache__
+                config.cpython-36.pyc
+                
