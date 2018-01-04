@@ -1,4 +1,4 @@
-# car_driver information manage system
+# car driver information manage system
 ## 需求文件
 
 >运行平台 windows   
@@ -55,6 +55,88 @@ WTForms (2.1)
 * Flask-Login 认证用户
 * Flask-WTF 渲染表单
 
+#### 工程项目文件结构
+
+```txt
+│  .gitattributes
+│  README.md(说明文档)
+│  tree.txts(树形结构文档)
+│  
+└─builds
+    └─manage_system(app文件夹)
+        │  config.py(配置)
+        │  run.py（运行）
+        │  
+        ├─.idea
+        │  │  manage_system.iml
+        │  │  misc.xml
+        │  │  modules.xml
+        │  │  workspace.xml
+        │  │  
+        │  ├─dictionaries
+        │  │      .xml
+        │  │      
+        │  └─inspectionProfiles
+        │          Project_Default.xml
+        │          
+        ├─app
+        │  │  forms.py(表单类)
+        │  │  models.py(数据库模型类)
+        │  │  views.py(视图，路由处理)
+        │  │  __init__.py(初始设置)
+        │  │  
+        │  ├─static
+        │  │  └─image
+        │  │      └─icon
+        │  │              OS_Linux_ubuntu.ico(图标)
+        │  │              
+        │  ├─templates(html 模板)
+        │  │      404.html
+        │  │      admin.html
+        │  │      admin_menu.html
+        │  │      base.html
+        │  │      driver_info_search.html
+        │  │      home.html
+        │  │      login.html
+        │  │      normal_change_password.html
+        │  │      normal_user.html
+        │  │      operations.html
+        │  │      operation_result.html
+        │  │      search_result.html
+        │  │      signin.html
+        │  │      test.html
+        │  │      
+        │  └─__pycache__
+        │          forms.cpython-36.pyc
+        │          models.cpython-36.pyc
+        │          views.cpython-36.pyc
+        │          __init__.cpython-36.pyc
+        │          
+        ├─flask
+        ├─migrations(数据库迁移仓库)
+        │  │  alembic.ini
+        │  │  env.py
+        │  │  README
+        │  │  script.py.mako
+        │  │  
+        │  ├─versions
+        │  │  │  801d9e9617a8_inital_migration.py
+        │  │  │  ae61f2765b45_second_migration.py
+        │  │  │  
+        │  │  └─__pycache__
+        │  │          801d9e9617a8_inital_migration.cpython-36.pyc
+        │  │          ae61f2765b45_second_migration.cpython-36.pyc
+        │  │          
+        │  └─__pycache__
+        │          env.cpython-36.pyc
+        │          
+        ├─tmp(缓存文件)
+        └─__pycache__
+                config.cpython-36.pyc
+                
+
+```
+
 #### 数据库table
 
 * User  
@@ -63,25 +145,29 @@ WTForms (2.1)
   |说明 | 主键|用户编号 | 昵称 |密码 |
   | 类型|Integer |String(10) |Unicode(32) |String(32) |  
 
-*Admin  
+* Admin  
   |列 | id | admin_id |  
   |:-|:----|:----------|  
   |说明 | 主键 |用户编号|
-  | 类型|Integer|String(10)
+  | 类型|Integer|String(10)  
 
-*DriverInfo
+
+* DriverInfo  
+
  |列|id| driver_id| license_id|real_name |
  |:-|:-|:-|:-|:-|
  | 说明|主键 |用户编号 |驾照编号 |真实姓名 |
  | 类型|Integar |String(10) |String(20) |Unicode(32) |
 
-*CarInfo
+* CarInfo  
+
  | 列|id |car_id |bought_time |car_type |driver_id |
  |:- |:- |:- |:- |:- |:- |
  | 说明|主键 |车辆编号 |购买日期(年/月) |车辆型号 |驾驶人编号 |
  | 类型|Integar |String(32) |String(10) |String(32) |String(10) |
 
-*RepairRecord
+* RepairRecord  
+
 | 列|id |car_id |broken_time |fee |is_fixed|
 |:-|:-|:-|:-|:-|:-|
 |说明|主键|车辆编号|损坏时间|花费|是否修好|
@@ -106,10 +192,42 @@ WTForms (2.1)
 运行服务器  
 本地浏览器访问127.0.0.1:5000即可访问主页面
 
-                
 
+## 流程介绍
 
+```mermaid
+graph TD;
+A["home"]-->|sign in|B("sign in");
+A-->|log in|C("log in");
+B-->C
+C-->D{是否为管理员};
+D-->|是|E{管理员界面};
+D-->|否|F(个人信息);
+F-->G(修改个人信息)
+F-->H(查看个人信息)
+E-->I(司机信息管理)
+E-->J(车辆信息管理)
+E-->K(维修信息管理)
+E-->L(用户管理)
+```
 
+```mermaid
+graph LR
+A{司机/车辆/维修信息管理}-->B(上传)
+A-->C(查询)
+A-->D(修改)
+A-->E(删除)
+```
 
+```mermaid
+graph LR
+A{用户管理}-->B(邀请管理员)
+A-->C(删除管理员)
+A-->D(新建管理员)
+A-->E(删除用户)
+A-->F(修改密码)
+```
 
+## 总结
 
+这次的数据库课设花费了很多时间，不仅仅是数据库部分的内容，还涉及了网页结构，前端后端之间的交互等等，让我了解到一个大型项目的所需要做的很多东西，也有很多的不足之处。想要搭建一个网站需要大量的人力物力财力，当然这只是搭建，后面还有很多运营和维护之类的事情。最重要的是通过操作，逐渐掌握了如何使用数据库，设计一个更加高效速度更加快的数据库的重要性。学会使用数据迁移仓库，方便更改数据库的列表之类的，可以回退到上一个版本，或者移到下一个版本，当前表的记录都会得到保留，当数据库发生炸库的时候，能有效得到恢复。
