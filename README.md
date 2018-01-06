@@ -140,12 +140,14 @@ WTForms (2.1)
 #### 数据库table
 
 * User  
+
   | 列| id | user_id | nick_name | password |
   |:--|:----|:---------|:---------|:---------|
   |说明 | 主键|用户编号 | 昵称 |密码 |
   | 类型|Integer |String(10) |Unicode(32) |String(32) |  
 
 * Admin  
+
   |列 | id | admin_id |  
   |:-|:----|:----------|  
   |说明 | 主键 |用户编号|
